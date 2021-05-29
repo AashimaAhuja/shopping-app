@@ -1,0 +1,44 @@
+.img-container > img {
+  height: 250px;
+  width: 250px;
+}
+.product-card {
+  margin: 8px;
+}
+.img-container {
+  position: relative;
+}
+
+.product-card label {
+  display: none;
+}
+
+.product-card.sold label {
+  display: block;
+  font-size: 50px;
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.product-card.sold {
+  opacity: 0.5;
+}
+.img-container > button {
+  position: absolute;
+  right: 5%;
+  top: 5%;
+}
+
+.product-info > dt {
+  margin: 0;
+  line-height: 1.5rem;
+}
+
+.product-info > dt:nth-child(1),
+.product-info > dt:last-child {
+  font-weight: 700;
+}

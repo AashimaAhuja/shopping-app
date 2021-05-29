@@ -1,0 +1,9 @@
+.products-title {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px;
+}
+
+.products-title > button {
+  padding: 8px;
+}

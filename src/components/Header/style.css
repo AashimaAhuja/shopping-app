@@ -1,0 +1,34 @@
+.app-header {
+  background: #fff;
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  flex-direction: column;
+}
+.likes-count {
+  align-self: flex-end;
+  margin-right: 1rem;
+  border: 2px solid black;
+  padding: 4px;
+  border-radius: 3px;
+  position: relative;
+}
+.liked-items {
+  position: absolute;
+  right: 0px;
+  border: 1px solid;
+  min-width: 150px;
+  z-index: 1;
+  top: 100%;
+  margin-top: 4px;
+  background: #fff;
+  padding: 0.5rem;
+  display: none;
+}
+.liked-items > dt {
+  text-align: left;
+  line-height: 20px;
+}
+.liked-items.active {
+  display: block;
+}
