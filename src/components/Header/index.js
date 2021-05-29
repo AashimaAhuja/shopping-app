@@ -1,23 +1,28 @@
-import React, {useCallback, useState, useMemo} from 'react';
-import './style.css';
+import React, { useCallback, useState, useMemo } from "react";
+import "./style.css";
 
-const Header = ({visibleProducts}) => {
-    const [showLikedItems, setShowLikedItems] = useState(false);
-    const onToggleLikedItems = useCallback(() => {
-        setShowLikedItems(showLikedItems => !showLikedItems);
-      },[])
-    const likedProducts = useMemo(() => visibleProducts.filter(({isLiked}) => isLiked ),[visibleProducts]);
+const Header = ({ visibleProducts }) => {
+  const [showLikedItems, setShowLikedItems] = useState(false);
+  const onToggleLikedItems = useCallback(() => {
+    setShowLikedItems((showLikedItems) => !showLikedItems);
+  }, []);
+  const likedProducts = useMemo(
+    () => visibleProducts.filter(({ isLiked }) => isLiked),
+    [visibleProducts]
+  );
 
-    return (
-        <header className='app-header'>
-            <div className='likes-count' onClick={onToggleLikedItems}>
-            <span>Likes {likedProducts.length}</span>
-            <dl className={`liked-items ${showLikedItems ? ' active' : '' }`}>
-                {likedProducts.map(({name}) =>  <dt>{name}</dt>)}
-            </dl>
-            </div>
-        </header>
-    );
-}
+  return (
+    <header className="app-header">
+      <div className="likes-count" onClick={onToggleLikedItems}>
+        <span>Likes {likedProducts.length}</span>
+        <dl className={`liked-items ${showLikedItems ? " active" : ""}`}>
+          {likedProducts.map(({ name, id }) => (
+            <dt key={id}>{name}</dt>
+          ))}
+        </dl>
+      </div>
+    </header>
+  );
+};
 
 export default Header;
